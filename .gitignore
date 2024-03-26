@@ -54,6 +54,3 @@ dkms.conf
 #VS
 .vs
 x64
-*.vcxproj
-*.vcxproj.*
-*.sln
