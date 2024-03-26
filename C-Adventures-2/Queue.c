@@ -5,7 +5,6 @@
 Queue* queue_init() {
     int capacity = 10;
     struct Queue* newQueue = malloc(sizeof(struct Queue) + (capacity * sizeof(int)));
-    //struct Queue* newQueue = malloc(sizeof(struct Queue));
 
     if (newQueue == NULL) {
         fprintf(stderr, "Memory allocation failed for Queue. \n");
@@ -15,7 +14,6 @@ Queue* queue_init() {
     newQueue->data = malloc(capacity * sizeof(int));
     newQueue->size = 0;
     newQueue->capacity = capacity;
-
     return newQueue;
 }
 
@@ -55,24 +53,11 @@ int get_head(Queue* q) {
 }
 
 int get_tail(Queue* q) {
-    //for (int i = 0; i < q->size; i++) {
-    //    printf("i: %d\n", i);
-    //    printf("Value: %d\n", q->data[i]);
-    //}
-
-    //int x = q->size;
-
-    //if (q->size > 0) {
-    //    return q->data[x];
-    //}
-    int y = 0;
-    while (y < q->size) {
-        y++;
+    if (q->size > 0) {
+        return q->data[q->size-1];
     }
-    printf("Y: %d\n", y);
 
-    int val = (q->data + y);
-    return val;
+    return 0;
 }
 
 

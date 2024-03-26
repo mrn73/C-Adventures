@@ -25,8 +25,9 @@ void runQueue() {
     printf("New queue...\n");
     print_queue(queue);
 
-    printf("\nEnqueuing...\n");
-    for (int i = 0; i < 15; i++) {
+    int total = 15;
+    printf("\nEnqueuing %d items...\n", total);
+    for (int i = 0; i < total; i++) {
         enqueue(queue, i + 1);
     }
 
@@ -44,5 +45,6 @@ void runQueue() {
 void main()
 {
     runLinkedList();
+    printf("\n\n");
     runQueue();
 }
